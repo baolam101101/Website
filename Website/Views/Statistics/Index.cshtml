@@ -1,0 +1,38 @@
+﻿@model Website.Models.Statistic
+
+@{
+    ViewBag.Title = "Statistics";
+}
+
+<div class="row">
+    <div class="col-sm-10">
+        <h2>@ViewBag.Title</h2>
+
+        <hr />
+            <dt>
+                @Html.DisplayNameFor(model => model.TotalIdeaofHR)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TotalIdeaofHR)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TotalIdeaofBusiness)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TotalIdeaofBusiness)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TotalIdeaofIT)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TotalIdeaofIT)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TotalIdeaofQA)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TotalIdeaofQA)
+            </dd>
+    </div>
+</div>
+

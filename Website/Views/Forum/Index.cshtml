@@ -1,0 +1,40 @@
+﻿@model PagedList.IPagedList<Website.Models.Post>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Post";
+}
+
+<div class="row">
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink("Submission for post idea", "Index", "Submissions")
+        <br />
+
+        foreach (var item in Model)
+        {
+            <div>
+                @Html.DisplayFor(i => item.Title)
+            </div>
+            <div>
+                @Html.DisplayFor(i => item.Time)
+            </div>
+
+            <div>
+                @Html.ActionLink("Details", "Details", "Posts", new { id = item.Id }, null)
+            </div>
+        }
+    }
+
+    <br /><br />
+
+    <div>
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+    </div>
+
+    <h2>
+        <strong>@ViewBag.Name</strong>
+    </h2>
+</div>
+

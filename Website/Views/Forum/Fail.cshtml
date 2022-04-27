@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Fail";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <h2>@ViewBag.Title</h2>
+</head>
+
+<body>
+    <div class="text-center">
+        <strong>You can not submit because submission out of date</strong>
+    </div>
+</body>
+<br><br>
+
+<div>
+    @Html.ActionLink("Back to Submission", "Index", "Submissions")
+</div>
+</html>
+
+
