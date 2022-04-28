@@ -26,7 +26,6 @@ namespace Website.Models
         public int submissionID { get; set; }   
         public int categoryId { get; set; }
         public virtual Category Category { get; set; }
-
         public virtual ICollection<Comment> Comment { get; set; }
     }
 }

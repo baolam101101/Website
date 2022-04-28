@@ -160,15 +160,7 @@ namespace Website.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    /*await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);*/
                     await this.UserManager.AddToRoleAsync(user.Id, model.Name);
-
-
-                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -177,7 +169,6 @@ namespace Website.Controllers
 
             ViewBag.Name = new SelectList(db.Roles.ToList(), "Name", "Name");
             ViewBag.DepartmentId = new SelectList(context.Departments, "DepartmentId", "Name", model.DepartmentId);
-            // If we got this far, something failed, redisplay form
             return View(model);
         }
 
@@ -356,8 +347,6 @@ namespace Website.Controllers
             }
         }
 
-        //
-        // POST: /Account/ExternalLoginConfirmation
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]

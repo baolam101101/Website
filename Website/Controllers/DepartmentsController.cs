@@ -20,7 +20,7 @@ namespace Website.Controllers
             return View(db.Departments.ToList());
         }
 
-        // GET: Departments/Details/5
+        
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,15 +35,11 @@ namespace Website.Controllers
             return View(department);
         }
 
-        // GET: Departments/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Departments/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name")] Department department)

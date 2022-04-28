@@ -29,19 +29,5 @@ namespace Website.Models
 
         public System.Data.Entity.DbSet<Website.Models.Category> Categories { get; set; }
 
-
-        /*public System.Data.Entity.DbSet<Website.Models.Post> Posts { get; set; }*/
-
-        /*public System.Data.Entity.DbSet<Website.Models.Comment> Comment { get; set; }*/
-
-        /*public System.Data.Entity.DbSet<Website.Models.ApplicationUser> ApplicationUsers { get; set; }*/
-
-        /*public System.Data.Entity.DbSet<Website.Models.ApplicationUser> ApplicationUsers { get; set; }*/
-
-        /*public System.Data.Entity.DbSet<Website.Models.Post> Posts { get; set; }
-
-        public System.Data.Entity.DbSet<Website.Models.ApplicationUser> ApplicationUsers { get; set; }*/
-
-        /*public System.Data.Entity.DbSet<Website.Models.ApplicationUser> ApplicationUsers { get; set; }*/
     }
 }

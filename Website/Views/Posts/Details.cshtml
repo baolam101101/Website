@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Post</h4>
+    <h4>Idea</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -106,7 +106,7 @@
         {
             <P>No Comment</P>
         }
-        @Html.ActionLink("Comment", "Create", "Comments", new { id = Model.Id }, null)
+        @Html.ActionLink("Comment", "Comment", "Posts", new { id = Model.Id }, null)
     </dl>
 </div>
 <p>

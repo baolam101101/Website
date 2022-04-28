@@ -35,15 +35,12 @@ namespace Website.Controllers
             return View(category);
         }
 
-        // GET: Categories/Create
+       
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Categories/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name")] Category category)
@@ -58,7 +55,6 @@ namespace Website.Controllers
             return View(category);
         }
 
-        // GET: Categories/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -110,9 +106,17 @@ namespace Website.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Category category = db.Categories.Find(id);
-            db.Categories.Remove(category);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            var category_check = db.Post.Where(x => x.categoryId == id).ToList();
+            if (category_check.Count != 0)
+            {
+                return RedirectToAction("FailDelete", "Forum");
+            }
+            else
+            {
+                db.Categories.Remove(category);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
         }
 
         protected override void Dispose(bool disposing)
